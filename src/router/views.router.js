@@ -80,6 +80,8 @@ router.get('/registerFail',async (req, res) => {
 });
 
 router.get('/info', async (req, res) => {
+    const CPUs = 9;
+
     let argv = process.argv.slice(1);
     let execPath = process.execPath;
     let memory = process.memoryUsage.rss();
@@ -88,7 +90,7 @@ router.get('/info', async (req, res) => {
     let execArg = process.execArgv;
     let processId = process.pid;
 
-    res.render('info', {argv, execPath, memory, platform, version, execArg, processId});
+    res.render('info', {argv, execPath, memory, platform, version, execArg, processId, CPUs});
 });
 
 export default router;
