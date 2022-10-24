@@ -1,7 +1,6 @@
 import { Router } from "express";
 import uploader from "../utils/utils.js";
 import services from "../dao/config.js";
-import PORT from "../config/portVariable.js";
 
 const router = Router();
 
@@ -12,12 +11,12 @@ let registerPass = '';
 
 router.get('/',async (req, res) => {
     if (registerPass === 'success') {
-        res.render('failRegister', {PORT})
+        res.render('failRegister')
         registerPass = '';
     } else {
         if (req.session.user) {
             let nameView = req.session.user.name
-            res.render('form', {objects, nameView, PORT});
+            res.render('form', {objects, nameView});
         } else {
             res.render('register');
         }
@@ -26,12 +25,12 @@ router.get('/',async (req, res) => {
 
 router.get('/login',async (req, res) => {
     if (loginpass === 'success') {
-        res.render('failLogin', {PORT});
+        res.render('failLogin')
         loginpass = '';
     } else {
         if (req.session.user) {
             let nameView = req.session.user.name
-            res.render('form', {objects, nameView, PORT});
+            res.render('form', {objects, nameView});
         } else {
             res.render('login');
         }
@@ -44,7 +43,7 @@ router.get('/logout', async (req, res) => {
         if (err) {
             return res.send("Couldn't log out, please let try again")
         } else {
-            res.render('logout', {nameView, PORT});
+            res.render('logout', {nameView});
         }
     })
 });
@@ -69,7 +68,7 @@ router.get('/products',async (req, res) => {
     let products = await services.productsService.getAll();
     let obj = JSON.parse(JSON.stringify(products));
     console.log(obj)
-    res.render('products', {obj, PORT})
+    res.render('products', {obj})
 });
 
 router.get('/loginFail',async (req, res) => {
@@ -91,7 +90,7 @@ router.get('/info', async (req, res) => {
     let execArg = process.execArgv;
     let processId = process.pid;
 
-    res.render('info', {argv, execPath, memory, platform, version, execArg, processId, CPUs, PORT});
+    res.render('info', {argv, execPath, memory, platform, version, execArg, processId, CPUs});
 });
 
 export default router;

@@ -1,6 +1,6 @@
 <div class="username">
     <h2>Bienvenido {{this.nameView}}!</h2>
-    <button class="btn btn-dark" id="buttonUsername" type="button" onclick="goToLink(this)" value="http://{{PORT}}/logout">Desloguear</button>
+    <button class="btn btn-dark" id="buttonUsername" type="button" onclick="goToLink(this)" value="http://clusters-forks-production.up.railway.app/logout">Desloguear</button>
 </div>
 <form class="form-register" id="form-id">
     <h4 id="titleForm">Añadir un producto</h4>
@@ -8,7 +8,7 @@
     <input class="form-control" type="number" name="price" id="price" placeholder="Ingrese el Precio" autoComplete='off'/>
     <input class="form-control" type="file" name="file" id="file" placeholder="Ingrese su imagen" autoComplete='off'/>
     <input class="btn btn-success" type="submit" value="Añadir" id="send">
-    <button class="btn btn-dark" type="button" onclick="goToLink(this)" value="http://{{PORT}}/products">Ver los productos</button>
+    <button class="btn btn-dark" type="button" onclick="goToLink(this)" value="http://clusters-forks-production.up.railway.app/products">Ver los productos</button>
 </form>
 
 <div id="tableListener">
