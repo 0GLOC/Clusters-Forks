@@ -17,15 +17,12 @@ import configMinimist from '../utils/minimistArgs.js';
 import config from '../config/config.js';
 
 const app = express();
-console.log(process.argv);
 
 const PORT = process.env.PORT ||configMinimist.port;
 
 const server = app.listen(PORT, () => {
     console.log(`Listening on port ${PORT}`)
 });
-
-console.log(PORT)
 
 const io = new Server(server);
 
