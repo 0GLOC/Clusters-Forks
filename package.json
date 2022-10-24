@@ -2,10 +2,10 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/server/server.js.js",
   "type": "module",
   "scripts": {
-    "dev": "nodemon src/server/server.js DEV",
+    "dev": "node src/server/server.js DEV",
     "start": "node src/server/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
