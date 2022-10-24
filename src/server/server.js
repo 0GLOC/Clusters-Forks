@@ -25,6 +25,8 @@ const server = app.listen(PORT, () => {
     console.log(`Listening on port ${PORT}`)
 });
 
+console.log(PORT)
+
 const io = new Server(server);
 
 const ContainerMessagesSaves = new MessageLibrary();
